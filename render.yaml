@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: eternel-afk-bot
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: BOT_SERVER
+        sync: false
+      - key: BOT_PASSWORD
+        sync: false
+      - key: BOT_START_DELAY_SECONDS
+        value: "20"
+      - key: BOT_REGISTER_DELAY_SECONDS
+        value: "5"
+      - key: BOT_LOGIN_DELAY_SECONDS
+        value: "8"
+      - key: BOT_RECONNECT_DELAY_SECONDS
+        value: "10"
+      - key: WEB_ACCESS_TOKEN
+        sync: false
